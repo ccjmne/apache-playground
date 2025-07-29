@@ -1,0 +1,18 @@
+FROM alpine:latest AS certgen
+
+RUN apk add --no-cache openssl
+WORKDIR /certs
+RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
+    -keyout server.key \
+    -out    server.crt \
+    -subj   "/C=US/ST=State/L=City/O=Org/OU=Dev/CN=localhost"
+
+
+FROM httpd:2.4
+
+COPY --from=certgen /certs         /usr/local/apache2/conf/certs
+COPY                httpd-2.4.conf /usr/local/apache2/conf/httpd.conf
+COPY                proxy.conf     /usr/local/apache2/conf/extra/proxy.conf
+COPY                httpd-ssl.conf /usr/local/apache2/conf/extra/httpd-ssl.conf
+
+# vim: ft=dockerfile
