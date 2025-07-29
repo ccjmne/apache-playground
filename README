@@ -48,9 +48,11 @@ Usage --------------------------------------------------------------------------
         ProxyPass  /  http://host:8080/
                              ^^^^
 
-    Edit the files whose basename ends with your running version number.
     You may add more files and copy them at build time in the corresponding
-    Dockerfile (or mount them in start.sh).
+    Dockerfile or mount them from start.sh.  You may need to include them from
+    httpd-<version>.conf.  If possible, try to keep your changes towards the
+    very end of that file, where we concentrate the deviations from the base
+    one, after the large banner explaining as such in clear terms.
 
 Licensing ----------------------------------------------------------------------
 
