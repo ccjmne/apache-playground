@@ -42,7 +42,11 @@ Usage --------------------------------------------------------------------------
     version of your choosing.
 
     n.b.: you may refer to your host machine as "host" from within the
-    container.
+    container.  For illustration, the following directive would proxy requests
+    to a Web server litning on the port 8080 of your host machine:
+
+        ProxyPass  /  http://host:8080/
+                             ^^^^
 
     Edit the files whose basename ends with your running version number.
     You may add more files and copy them at build time in the corresponding
