@@ -48,4 +48,8 @@ Usage --------------------------------------------------------------------------
     You may add more files and copy them at build time in the corresponding
     Dockerfile (or mount them in start.sh).
 
+Licensing ----------------------------------------------------------------------
+
+    MIT.  Do as you please, provided adequate attribution where appropriate.
+
                                                           vim: tw=80 sw=4 et sta
