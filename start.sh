@@ -12,4 +12,4 @@ esac
 
 ok Starting Apache $version
 docker build -t apache-playground:$version --file Dockerfile-$version .
-docker run --rm -it --name apache-playground-$version -p443:443 --publish 8888:80 apache-playground:$version
+docker run --rm -it --name apache-playground-$version -p80:80 -p443:443 apache-playground:$version
