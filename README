@@ -30,18 +30,19 @@ Minimal? -----------------------------------------------------------------------
 
 Usage --------------------------------------------------------------------------
 
-    Just edit the Dockerfile-<version> and corresponding httpd-<version>.conf.
-    Then, run:
+    Just edit the Dockerfile-<version> and corresponding httpd-<version>.conf,
+    then run:
 
         ./start.sh [version] ............. version ∈ { "2.2", "2.4", undefined }
 
     If you don't specify a version, it'll default to 2.4.
 
     It'll create a fresh self-signed certificate for you and set it up for use
-    within Apache.  I'll also figure out what your Docker bridge network gateway
-    IP is, so that you may refer to your host machine as "localhost" from within
-    the proxy.conf.  Then, it'll start an Apache HTTP server instance, with the
+    within Apache.  Then, it'll start an Apache HTTP server instance, with the
     version of your choosing.
+
+    n.b.: you may refer to your host machine as "host" from within the
+    container.
 
     Edit the files whose basename ends with your running version number.
     You may add more files and copy them at build time in the corresponding
