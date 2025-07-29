@@ -14,7 +14,4 @@ COPY                httpd-2.4.conf httpd.conf
 COPY                proxy.conf     extra/proxy.conf
 COPY                httpd-ssl.conf extra/httpd-ssl.conf
 
-RUN GATEWAY=172.17.0.1 && \
-    sed -i "s/localhost/$GATEWAY/" extra/proxy.conf
-
 # vim: ft=dockerfile

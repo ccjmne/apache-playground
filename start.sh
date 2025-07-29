@@ -11,5 +11,10 @@ case "${1:-2.4}" in
 esac
 
 ok Starting Apache $version
-docker build -t apache-playground:$version --file Dockerfile-$version .
-docker run --rm -it --name apache-playground-$version -p80:80 -p443:443 apache-playground:$version
+docker build --tag apache-playground:$version --file Dockerfile-$version .
+docker run --rm -it                       \
+    --name     apache-playground-$version \
+    --publish  80:80                      \
+    --publish  443:443                    \
+    --add-host host:host-gateway          \
+    apache-playground:$version

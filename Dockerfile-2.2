@@ -14,7 +14,4 @@ COPY                httpd-2.2.conf httpd.conf
 COPY                proxy.conf     extra/proxy.conf
 COPY                httpd-ssl.conf extra/httpd-ssl.conf
 
-RUN GATEWAY=$(ip route show default | grep -Po '(?<=via )[^ ]+') && \
-    sed -i "s/localhost/$GATEWAY/" extra/proxy.conf
-
 # vim: ft=dockerfile
