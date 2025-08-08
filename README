@@ -43,7 +43,7 @@ Usage --------------------------------------------------------------------------
 
     n.b.: you may refer to your host machine as "host" from within the
     container.  For illustration, the following directive would proxy requests
-    to a Web server litning on the port 8080 of your host machine:
+    to a Web server linting on the port 8080 of your host machine:
 
         ProxyPass  /  http://host:8080/
                              ^^^^
